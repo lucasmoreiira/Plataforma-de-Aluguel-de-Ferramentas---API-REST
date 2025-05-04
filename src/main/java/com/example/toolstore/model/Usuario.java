@@ -18,7 +18,8 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nome, String cpf, Telefone telefone, Endereco endereco) {
+    public Usuario(String id,String nome, String cpf, Telefone telefone, Endereco endereco) {
+        this.id=id;
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;

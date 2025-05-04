@@ -4,6 +4,7 @@ import com.example.toolstore.model.Usuario;
 import com.example.toolstore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -24,7 +25,8 @@ public class UsuarioService {
     public Usuario saveUsuario(Usuario usuario){
         return usuarioRepository.save(usuario);
     }
-    public void deleteUsuarioBy(String id){
+
+    public void deleteUsuario(String id){
         usuarioRepository.deleteById(id);
     }
 
