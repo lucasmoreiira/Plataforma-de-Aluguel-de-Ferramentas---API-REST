@@ -1,7 +1,10 @@
 package com.example.toolstore.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
 
 
 @Document(collection ="usuarios")
@@ -13,7 +16,9 @@ public class Usuario {
     private String cpf;
     private Telefone telefone;
     private Endereco endereco;
-    //private Reserva ReservasNoNomedoUsuario
+
+    //@DBRef
+    //private List<Reserva> reservas;
 
     public Usuario() {
     }
@@ -46,9 +51,7 @@ public class Usuario {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
+    public void setCpf(String cpf) { this.cpf = cpf;}
 
     public Telefone getTelefone() {
         return telefone;
@@ -65,4 +68,12 @@ public class Usuario {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+
+//   public List<Reserva> getReservas() {
+//        return reservas;
+//    }
+//
+//    public void setReservas(List<Reserva> reservas) {
+//        this.reservas = reservas;
+//    }
 }
