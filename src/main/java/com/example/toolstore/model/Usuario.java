@@ -17,9 +17,6 @@ public class Usuario {
     private Telefone telefone;
     private Endereco endereco;
 
-    //@DBRef
-    //private List<Reserva> reservas;
-
     public Usuario() {
     }
 
@@ -69,11 +66,4 @@ public class Usuario {
         this.endereco = endereco;
     }
 
-//   public List<Reserva> getReservas() {
-//        return reservas;
-//    }
-//
-//    public void setReservas(List<Reserva> reservas) {
-//        this.reservas = reservas;
-//    }
 }

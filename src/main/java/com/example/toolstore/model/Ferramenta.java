@@ -9,7 +9,6 @@ public class Ferramenta {
     private String id;
     private String nome;
     private Double valorDia;
-    private String status;
     private String categoria;
 
     public String getId() {
@@ -34,14 +33,6 @@ public class Ferramenta {
 
     public void setValorDia(Double valorDia) {
         this.valorDia = valorDia;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 
     public String getCategoria() {
