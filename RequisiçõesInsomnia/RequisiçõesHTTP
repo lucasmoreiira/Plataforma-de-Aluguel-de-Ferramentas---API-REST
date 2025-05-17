@@ -1,0 +1,448 @@
+type: collection.insomnia.rest/5.0
+name: APIFerramentas
+meta:
+  id: wrk_754988cf188b488191cf558c5c533f33
+  created: 1746311229270
+  modified: 1746311255270
+collection:
+  - name: Usuario
+    meta:
+      id: fld_4475918e01d445bea80eec4b9d55bdfa
+      created: 1746917814835
+      modified: 1746917814835
+      sortKey: -1746917814835
+    children:
+      - url: http://localhost:8080/usuarios
+        name: GetAllUsuarios
+        meta:
+          id: req_9d66ed35537249beb3b7c136e7bcd208
+          created: 1746311261587
+          modified: 1747265881032
+          isPrivate: false
+          sortKey: -1746917820519
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: CreateUsuario
+        meta:
+          id: req_bd41f7fb205243f5ba970abd4d2c734b
+          created: 1746312163215
+          modified: 1747515015428
+          isPrivate: false
+          sortKey: -1746917820669
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Ana Souza",
+            	"cpf": "12345678901",
+            	"telefone": {
+            		"ddd": "11",
+            		"numero": "98765-4321"
+            	},
+            	"endereco": {
+            		"logradouro": "Rua das Acácias",
+            		"numero": "123",
+            		"cidade": "São Paulo",
+            		"uf": "SP",
+            		"cep": "01001000"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/682140c8d5f5ec3464e53829
+        name: DeleteByID
+        meta:
+          id: req_1643922d0662444d9d270384a181ce1b
+          created: 1746325317301
+          modified: 1747009967818
+          isPrivate: false
+          sortKey: -1746917820569
+        method: DELETE
+        body:
+          mimeType: multipart/form-data
+        headers:
+          - name: Content-Type
+            value: multipart/form-data
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/682140c8d5f5ec3464e53829
+        name: GetUsuarioById
+        meta:
+          id: req_32893d17b86b4d9199b5fc38e635bfb3
+          created: 1746396669060
+          modified: 1747009746036
+          isPrivate: false
+          sortKey: -1746917820369
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios/682140c8d5f5ec3464e53829
+        name: updateUsuario
+        meta:
+          id: req_1c8c992f96554a0ab000bfd6406ca312
+          created: 1746396677632
+          modified: 1747009958780
+          isPrivate: false
+          sortKey: -1746917820469
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome": "Ana Souza",
+            	"cpf": "12345678901",
+            	"telefone": {
+            		"ddd": "11",
+            		"numero": "98765-4321"
+            	},
+            	"endereco": {
+            		"logradouro": "Rua das Acácias",
+            		"numero": "123",
+            		"cidade": "São Paulo",
+            		"uf": "SP",
+            		"cep": "01001000"
+            	}
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Reserva
+    meta:
+      id: fld_db7d65803fc8487cb127c3b0da139275
+      created: 1746918241161
+      modified: 1746918241161
+      sortKey: -1746917814785
+    children:
+      - url: http://localhost:8080/reservas
+        name: GetAllReserva
+        meta:
+          id: req_876fe9e72fb44f43bf45979b9e714d66
+          created: 1746918241163
+          modified: 1746921772071
+          isPrivate: false
+          sortKey: -1746917820769
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/reservas
+        name: CreateReserva
+        meta:
+          id: req_cfcf680fe16c4dce8fdaa855d3d00b47
+          created: 1746918241166
+          modified: 1747008749968
+          isPrivate: false
+          sortKey: -1746917820669
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"dataInicioReserva": "2025-05-04T14:30:00",
+            	"dataFimReserva": "2025-05-10T14:30:00",
+            	"usuario": {
+            		"id": "6820bf94cf2d8e0e35b8eee5"
+            	},
+            	"ferramentas": [
+            		{
+            			"id": "68210f0b1747752c108b85ad"
+            		},
+            		{
+            			"id": "68210eec1747752c108b85a8"
+            		}
+            	]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/reservas/6820bf94cf2d8e0e35b8eee5
+        name: DeleteByID
+        meta:
+          id: req_243a746122ba4456b4db96e5f3cae30e
+          created: 1746918241168
+          modified: 1747008688576
+          isPrivate: false
+          sortKey: -1746917820569
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/reservas/682118e71747752c108b85b2
+        name: GetReservaById
+        meta:
+          id: req_9ba75acf506c473ea6fa2dc9617f4343
+          created: 1746918241170
+          modified: 1747007936157
+          isPrivate: false
+          sortKey: -1746917820719
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/reservas/682118d51747752c108b85b1
+        name: updateReserva
+        meta:
+          id: req_81530743ae784ac2b0f726b4de169e4c
+          created: 1746918241172
+          modified: 1747008769928
+          isPrivate: false
+          sortKey: -1746917820469
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |
+            {
+            	"dataInicioReserva": "2025-05-04T14:30:00",
+            	"dataFimReserva": "2025-05-10T14:30:00",
+            	"usuario": {
+            		"id": "6820bf9bcf2d8e0e35b8eee6"
+            	},
+            	"ferramentas": [
+            		{
+            			"id": "68210ef91747752c108b85aa"
+            		},
+            		{
+            			"id":"68210f011747752c108b85ab"
+            		},
+            		{
+            			"id":"68210ef41747752c108b85a9"
+            		}
+            	]
+            },
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Ferramenta
+    meta:
+      id: fld_76d952eb82d64fb79b232a2cc9e72f5c
+      created: 1746921400521
+      modified: 1746921400521
+      sortKey: -1746917814735
+    children:
+      - url: http://localhost:8080/ferramentas
+        name: GetAllFerramenta
+        meta:
+          id: req_edfb1842dfda4c78a9b2945cf81d4dd8
+          created: 1746921400524
+          modified: 1747514947626
+          isPrivate: false
+          sortKey: -1746917820744
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/ferramentas/682110131747752c108b85af
+        name: DeleteByID
+        meta:
+          id: req_f2659efbeab34be89a32d5c8a93ca5f4
+          created: 1746921400526
+          modified: 1746997739417
+          isPrivate: false
+          sortKey: -1746917820569
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/ferramentas/682110131747752c108b85af
+        name: GetFerramentaById
+        meta:
+          id: req_980394861929486bb60c6b6238fadac5
+          created: 1746921400527
+          modified: 1747514959027
+          isPrivate: false
+          sortKey: -1746917820694
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/ferramentas/682110131747752c108b85af
+        name: updateFerramenta
+        meta:
+          id: req_b31810235f054f38ab5f5070e9c5aac4
+          created: 1746921400529
+          modified: 1747514942068
+          isPrivate: false
+          sortKey: -1746917820469
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-2
+              {
+                "nome": "Lavadora de Alta aaaaaATESTE",
+                "valorDia": "30",
+                "categoria": "limpeza"
+              }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/ferramentas
+        name: CreateFerramenta
+        meta:
+          id: req_dfd336c915d944a4b68e38ed09c8402c
+          created: 1746921409097
+          modified: 1747514936491
+          isPrivate: false
+          sortKey: -1746917820644
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-2
+              {
+                "nome": "Lavadora de Alta PressãoTESTE",
+                "valorDia": "30",
+                "categoria": "limpeza"
+              }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_a3c2ad5ca3b45ef727739ad5c01d4e1dc71524ee
+    created: 1746311229280
+    modified: 1746311229280
+environments:
+  name: Base Environment
+  meta:
+    id: env_a3c2ad5ca3b45ef727739ad5c01d4e1dc71524ee
+    created: 1746311229275
+    modified: 1746323882969
+    isPrivate: false
