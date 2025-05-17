@@ -28,83 +28,125 @@ src/
 
 ### 🔹 Usuários
 
-- `GET /usuarios` — Listar todos os usuários
-- `GET /usuarios/{id}` — Buscar usuário por ID
-- `POST /usuarios` — Criar novo usuário
-- `PUT /usuarios/{id}` — Atualizar usuário existente
-- `DELETE /usuarios/{id}` — Deletar usuário
+- `GET /usuarios`
+- `GET /usuarios/{id}`
+- `POST /usuarios`
+- `PUT /usuarios/{id}`
+- `DELETE /usuarios/{id}`
 
 ### 🔹 Ferramentas
 
-- `GET /ferramentas` — Listar ferramentas
-- `GET /ferramentas/{id}` — Buscar ferramenta por ID
-- `POST /ferramentas` — Cadastrar nova ferramenta
-- `PUT /ferramentas/{id}` — Atualizar ferramenta
-- `DELETE /ferramentas/{id}` — Deletar ferramenta
+- `GET /ferramentas`
+- `GET /ferramentas/{id}`
+- `POST /ferramentas`
+- `PUT /ferramentas/{id}`
+- `DELETE /ferramentas/{id}`
 
 ### 🔹 Reservas
 
-- `GET /reservas` — Listar reservas (retorna apenas ID e nome de usuário e ferramentas)
-- `GET /reservas/{id}` — Buscar reserva por ID
-- `POST /reservas` — Criar nova reserva
-- `PUT /reservas/{id}` — Atualizar reserva
-- `DELETE /reservas/{id}` — Cancelar reserva
+- `GET /reservas`
+- `GET /reservas/{id}`
+- `POST /reservas`
+- `PUT /reservas/{id}`
+- `DELETE /reservas/{id}`
 
 ---
 
-## 📄 Exemplo de JSON para criar uma reserva
+## 📄 Exemplos de JSON (payloads)
+
+### 🔸 Criar um Usuário
+
+```json
+{
+  "nome": "João da Silva",
+  "cpf": "12345678900",
+  "telefone": "11999998888",
+  "endereco": {
+    "logradouro": "Rua das Ferramentas",
+    "numero": "100",
+    "cidade": "São Paulo",
+    "uf": "SP",
+    "cep": "01000-000"
+  }
+}
+```
+
+### 🔸 Criar uma Ferramenta
+
+```json
+{
+  "nome": "Furadeira Bosch",
+  "valor_dia": 25.0,
+  "status": "disponível",
+  "categoria": "Elétrica"
+}
+```
+
+### 🔸 Criar uma Reserva
 
 ```json
 {
   "dataInicioReserva": "2025-05-20",
   "dataFimReserva": "2025-05-25",
   "usuario": {
-    "id": "user123"
+    "id": "usuario123"
   },
   "ferramentas": [
-    { "id": "ferra001" },
-    { "id": "ferra002" }
+    { "id": "ferramenta001" },
+    { "id": "ferramenta002" }
   ]
 }
 ```
 
 ---
 
-## 🧪 Como testar
+## 🧪 Como rodar o projeto
 
-1. Clone o projeto:
-   ```bash
-   git clone https://github.com/seu-usuario/aluguel-ferramentas-api.git
-   ```
-
-2. Navegue até o diretório e execute:
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-
-3. A API estará disponível em:  
-   `http://localhost:8080`
-
----
-
-## ✅ Requisitos
+### 1. Requisitos
 
 - Java 17+
-- MongoDB em execução (localhost:27017)
+- MongoDB instalado (pode usar o **MongoDB Compass**)
 - Maven
+
+### 2. Conectando ao MongoDB com o MongoDB Compass
+
+1. Abra o MongoDB Compass e conecte à instância local:
+   ```
+   mongodb://localhost:27017
+   ```
+2. Crie um banco de dados chamado:
+   ```
+   aluguel_ferramentas
+   ```
+
+### 3. Configuração do `application.properties`
+
+Caso necessário, altere as configurações no arquivo `src/main/resources/application.properties`:
+
+```properties
+spring.data.mongodb.uri=mongodb://localhost:27017/aluguel_ferramentas
+spring.data.mongodb.database=aluguel_ferramentas
+server.port=8080
+```
+
+### 4. Executar o projeto
+
+```bash
+./mvnw spring-boot:run
+```
+
+A aplicação estará acessível em:
+
+```
+http://localhost:8080
+```
 
 ---
 
 ## 📝 Observações
 
-- A resposta das reservas usa DTOs (`ReservaDTO`) para retornar **somente o ID e nome do usuário e das ferramentas**.
-- As entidades estão organizadas de forma aninhada em alguns casos por simplicidade no consumo da API.
-- Este projeto pode ser facilmente estendido com autenticação (JWT), paginação, filtros por data ou status etc.
+- As respostas de reservas retornam apenas ID e nome do usuário e das ferramentas.
+- O relacionamento é feito por ID (referência), facilitando o uso com MongoDB.
+- Recomendado utilizar o MongoDB Compass para monitorar dados e inserir registros manualmente se necessário.
 
 ---
-
-## 👤 Autor
-
-Feito por [Seu Nome]  
-📧 seu.email@example.com  
-📂 [LinkedIn ou GitHub](https://github.com/seu-usuario)
