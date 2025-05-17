@@ -122,7 +122,7 @@ src/
    ```
 2. Crie um banco de dados chamado:
    ```
-   aluguel_ferramentas
+   lojaferramentasdb
    ```
 
 ### 3. Configuração do `application.properties`
@@ -130,24 +130,30 @@ src/
 Caso necessário, altere as configurações no arquivo `src/main/resources/application.properties`:
 
 ```properties
-spring.data.mongodb.uri=mongodb://localhost:27017/aluguel_ferramentas
-spring.data.mongodb.database=aluguel_ferramentas
-server.port=8080
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=lojaferramentasdb
+spring.data.mongodb.username=admin
+spring.data.mongodb.password=password
 ```
 
 ### 4. Executar o projeto
 
-```bash
-./mvnw spring-boot:run
-```
+1. **Abra o projeto no IntelliJ IDEA.**
+2. Aguarde o carregamento completo do Maven (verifique se todas as dependências estão baixadas).
+3. No painel lateral esquerdo, navegue até:
+   ```
+   src/main/java/com/example/toolstore/ToolstoreApplication.java
+   ```
+4. Clique com o botão direito no arquivo `LojaDeFerramentasApplication.java`.
+5. Selecione a opção **Run 'LojaDeFerramentasApplication.main()'**.
+6. O servidor Spring Boot será iniciado em:
+   ```
+   http://localhost:8080
+   ```
 
-A aplicação estará acessível em:
+> 💡 Certifique-se de que o MongoDB esteja em execução antes de iniciar a aplicação.
 
-```
-http://localhost:8080
-```
-
----
 
 ## 📝 Observações
 
