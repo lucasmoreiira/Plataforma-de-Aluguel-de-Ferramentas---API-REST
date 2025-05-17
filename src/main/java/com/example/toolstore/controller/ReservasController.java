@@ -24,7 +24,7 @@ public class ReservasController {
     private ReservaService service;
 
     @GetMapping
-    public List<ReservaDTO> listar() {
+    public List<ReservaDTO> listarr() {
         return service.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
