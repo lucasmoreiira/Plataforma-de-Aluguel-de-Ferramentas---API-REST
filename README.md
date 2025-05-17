@@ -58,16 +58,19 @@ src/
 
 ```json
 {
-  "nome": "João da Silva",
-  "cpf": "12345678900",
-  "telefone": "11999998888",
-  "endereco": {
-    "logradouro": "Rua das Ferramentas",
-    "numero": "100",
-    "cidade": "São Paulo",
-    "uf": "SP",
-    "cep": "01000-000"
-  }
+	"nome": "Ana Souza",
+	"cpf": "12345678901",
+	"telefone": {
+		"ddd": "11",
+		"numero": "98765-4321"
+	},
+	"endereco": {
+		"logradouro": "Rua das Acácias",
+		"numero": "123",
+		"cidade": "São Paulo",
+		"uf": "SP",
+		"cep": "01001000"
+	}
 }
 ```
 
