@@ -77,27 +77,30 @@ src/
 ### 🔸 Criar uma Ferramenta
 
 ```json
-{
-  "nome": "Furadeira Bosch",
-  "valor_dia": 25.0,
-  "status": "disponível",
-  "categoria": "Elétrica"
-}
+  {
+    "nome": "Lavadora de Alta Pressão",
+    "valorDia": "30",
+    "categoria": "limpeza"
+  }
 ```
 
 ### 🔸 Criar uma Reserva
 
 ```json
 {
-  "dataInicioReserva": "2025-05-20",
-  "dataFimReserva": "2025-05-25",
-  "usuario": {
-    "id": "usuario123"
-  },
-  "ferramentas": [
-    { "id": "ferramenta001" },
-    { "id": "ferramenta002" }
-  ]
+	"dataInicioReserva": "2025-05-04T14:30:00",
+	"dataFimReserva": "2025-05-10T14:30:00",
+	"usuario": {
+		"id": "6820bf94cf2d8e0e35b8eee5"
+	},
+	"ferramentas": [
+		{
+			"id": "68210f0b1747752c108b85ad"
+		},
+		{
+			"id": "68210eec1747752c108b85a8"
+		}
+	]
 }
 ```
 
