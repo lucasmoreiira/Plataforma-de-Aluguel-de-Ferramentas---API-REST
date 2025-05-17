@@ -13,7 +13,6 @@ public class Reserva {
     private String id;
     private LocalDateTime dataInicioReserva;
     private LocalDateTime dataFimReserva;
-
     @DBRef
     private Usuario usuario;
     @DBRef

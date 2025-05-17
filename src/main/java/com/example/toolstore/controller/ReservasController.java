@@ -5,9 +5,12 @@ import com.example.toolstore.dto.FerramentaResumoDTO;
 import com.example.toolstore.dto.ReservaDTO;
 import com.example.toolstore.dto.UsuarioResumoDTO;
 import com.example.toolstore.model.Reserva;
+import com.example.toolstore.model.Usuario;
 import com.example.toolstore.service.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,26 +29,29 @@ public class ReservasController {
     }
 
     @GetMapping("/{id}")
-    public ReservaDTO buscar(@PathVariable("id") String id) {
+    public ResponseEntity<ReservaDTO> buscar(@PathVariable("id") String id) {
         Reserva reserva = service.findById(id);
-        return mapToDTO(reserva);
+        return ResponseEntity.ok(mapToDTO(reserva));
     }
 
     @PostMapping
-    public Reserva criar(@RequestBody Reserva reserva) {
-
-        return service.save(reserva);
+    public ResponseEntity<String> criar(@RequestBody Reserva reserva) {
+        Reserva savedReserva =service.save(reserva);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Reserva criada com sucesso! ID: "+ savedReserva.getId());
     }
 
     @PutMapping("/{id}")
-    public Reserva atualizar(@PathVariable("id") String id, @RequestBody Reserva reserva) {
+    public ResponseEntity<String> atualizar(@PathVariable("id") String id, @RequestBody Reserva reserva) {
         reserva.setId(id);
-        return service.save(reserva);
+        Reserva updatedReserva = service.save(reserva);
+        return ResponseEntity.ok("Reserva atualizada com sucesso! ID: "+ updatedReserva.getId());
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable("id") String id) {
+    public ResponseEntity<String> deletar(@PathVariable("id") String id) {
         service.delete(id);
+        return ResponseEntity.ok("Reserva deletada com sucesso!");
     }
 
     private ReservaDTO mapToDTO(Reserva reserva){

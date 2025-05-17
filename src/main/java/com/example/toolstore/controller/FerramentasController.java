@@ -3,6 +3,8 @@ package com.example.toolstore.controller;
 import com.example.toolstore.model.Ferramenta;
 import com.example.toolstore.service.FerramentaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,23 +23,28 @@ public class FerramentasController {
     }
 
     @GetMapping("/{id}")
-    private Ferramenta getFerramentaById(@PathVariable("id") String id){
-        return ferramentaService.findById(id);
+    private ResponseEntity<Ferramenta> getFerramentaById(@PathVariable("id") String id){
+        Ferramenta ferramenta = ferramentaService.findById(id);
+        return ResponseEntity.ok(ferramenta);
     }
 
     @PostMapping
-    public Ferramenta createFerramenta(@RequestBody Ferramenta ferramenta) {
-        return ferramentaService.save(ferramenta);
+    public ResponseEntity<String> createFerramenta(@RequestBody Ferramenta ferramenta) {
+        Ferramenta savedFerramenta = ferramentaService.save(ferramenta);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body("Ferramenta criada com sucesso! ID: "+ savedFerramenta.getId());
     }
 
     @PutMapping("/{id}")
-    public Ferramenta updateFerramenta(@PathVariable("id") String id, @RequestBody Ferramenta ferramenta) {
+    public ResponseEntity<String> updateFerramenta(@PathVariable("id") String id, @RequestBody Ferramenta ferramenta) {
         ferramenta.setId(id);
-        return ferramentaService.save(ferramenta);
+        Ferramenta updateFerramenta =ferramentaService.save(ferramenta);
+        return ResponseEntity.ok("Ferramenta atualizada com sucesso");
     }
 
     @DeleteMapping("/{id}")
-    public void deleteFerramenta(@PathVariable("id") String id) {
+    public ResponseEntity<String> deleteFerramenta(@PathVariable("id") String id) {
         ferramentaService.delete(id);
+        return ResponseEntity.ok("Ferramenta deletada com sucesso");
     }
 }
