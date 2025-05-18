@@ -52,7 +52,7 @@ src/
 
 ---
 ### 📁 Requisições Insomnia
-Dentro deste projeto há uma pasta chamada requisicaoInsomnia, que contém arquivos de requisições HTTP organizadas por recursos da API (como usuários, ferramentas e reservas).
+Dentro deste projeto há uma pasta chamada RequisiçõesInsomnia, que contém arquivos de requisições HTTP organizadas por recursos da API (como usuários, ferramentas e reservas).
 
 Esses arquivos foram criados para facilitar os testes e a utilização da API REST durante o desenvolvimento ou integração. Eles podem ser importados diretamente no Insomnia, permitindo realizar chamadas como GET, POST, PUT e DELETE com exemplos prontos.
 
