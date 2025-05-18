@@ -51,6 +51,22 @@ src/
 - `DELETE /reservas/{id}`
 
 ---
+### 📁 Requisições Insomnia
+Dentro deste projeto há uma pasta chamada requisicaoInsomnia, que contém arquivos de requisições HTTP organizadas por recursos da API (como usuários, ferramentas e reservas).
+
+Esses arquivos foram criados para facilitar os testes e a utilização da API REST durante o desenvolvimento ou integração. Eles podem ser importados diretamente no Insomnia, permitindo realizar chamadas como GET, POST, PUT e DELETE com exemplos prontos.
+
+Como usar:
+
+Abra o Insomnia.
+
+Clique em "Importar" no menu superior.
+
+Selecione "Arquivo" e escolha o conteúdo da pasta requisicaoInsomnia.
+
+Você verá os endpoints organizados por categorias.
+
+Essa é uma forma prática e rápida de explorar todos os recursos oferecidos pela API sem precisar configurar cada requisição manualmente.
 
 ## 📄 Exemplos de JSON (payloads)
 
