@@ -149,8 +149,6 @@ Caso necessário, altere as configurações no arquivo `src/main/resources/appli
 spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=lojaferramentasdb
-spring.data.mongodb.username=admin
-spring.data.mongodb.password=password
 ```
 
 ### 4. Executar o projeto
